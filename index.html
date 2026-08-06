@@ -1,0 +1,2651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080808">
+  <meta name="color-scheme" content="dark">
+
+  <title>B.B Universe — Social Media Strategy, Content & Management</title>
+  <meta
+    name="description"
+    content="B.B Universe builds social media strategies, reels, campaigns and communities that help brands earn attention and grow."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+/* ========================================================================== 
+   B.B UNIVERSE — PREMIUM CINEMATIC INTERFACE
+   Replace --frame-background only if the frame edges use another exact colour.
+   ========================================================================== */
+
+:root {
+  --frame-background: #080808;
+  --ink: #f6f3ec;
+  --ink-soft: rgba(246, 243, 236, 0.76);
+  --ink-muted: rgba(246, 243, 236, 0.52);
+  --ink-faint: rgba(246, 243, 236, 0.28);
+  --paper: #f0eee7;
+  --paper-ink: #151515;
+  --paper-muted: rgba(21, 21, 21, 0.62);
+  --line: rgba(255, 255, 255, 0.16);
+  --line-soft: rgba(255, 255, 255, 0.09);
+  --line-dark: rgba(21, 21, 21, 0.18);
+  --accent: #f3ff83;
+  --accent-ink: #10110a;
+  --danger: #ff8d83;
+  --success: #a9f1bb;
+  --container: min(1440px, calc(100vw - 64px));
+  --nav-height: 72px;
+  --section-space: clamp(110px, 12vw, 190px);
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 28px;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-standard: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --shadow-nav: 0 18px 60px rgba(0, 0, 0, 0.24);
+  --z-loader: 1000;
+  --z-menu: 800;
+  --z-header: 700;
+  --z-overlay: 50;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  scroll-behavior: smooth;
+  background: var(--frame-background);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  overflow-x: hidden;
+  background: var(--frame-background);
+  color: var(--ink);
+  font-family: Inter, Manrope, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+p,
+blockquote,
+figure,
+dl,
+dd {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+strong {
+  font-family: Manrope, Inter, system-ui, sans-serif;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  border: 0;
+  border-radius: 0;
+  font: inherit;
+  color: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+img,
+canvas,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: calc(var(--z-loader) + 1);
+  padding: 10px 14px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 700;
+  transform: translateY(-160%);
+  transition: transform 180ms ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+/* Loader */
+.site-loader {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-loader);
+  display: grid;
+  place-items: center;
+  background: var(--frame-background);
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 700ms var(--ease-out), visibility 700ms;
+}
+
+.site-loader.is-ready,
+.site-loader.is-exiting {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.site-loader.has-error {
+  opacity: 1;
+  visibility: visible;
+}
+
+.site-loader__inner {
+  width: min(520px, calc(100vw - 48px));
+  text-align: center;
+}
+
+.site-loader__mark {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 22px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 50%;
+  font-family: Manrope, sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: -0.06em;
+}
+
+.site-loader__brand {
+  font-family: Manrope, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+}
+
+.site-loader__label {
+  margin-top: 16px;
+  color: var(--ink-muted);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.site-loader__progress {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  margin-top: 34px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.site-loader__progress-fill {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: var(--ink);
+  transition: width 180ms linear;
+}
+
+.site-loader__percentage {
+  margin-top: 15px;
+  color: var(--ink-muted);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.12em;
+}
+
+/* Header */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-header);
+  padding: 18px 24px 0;
+  pointer-events: none;
+}
+
+.site-header__shell {
+  width: min(1460px, 100%);
+  min-height: var(--nav-height);
+  margin: 0 auto;
+  padding: 10px 12px 10px 16px;
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) auto minmax(220px, 1fr);
+  align-items: center;
+  gap: 24px;
+  color: #fff;
+  background: rgba(8, 8, 8, 0.48);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 18px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08), var(--shadow-nav);
+  backdrop-filter: blur(18px) saturate(120%);
+  -webkit-backdrop-filter: blur(18px) saturate(120%);
+  pointer-events: auto;
+  transition:
+    min-height 350ms var(--ease-out),
+    background-color 350ms ease,
+    border-color 350ms ease,
+    transform 350ms var(--ease-out);
+}
+
+.site-header.is-scrolled .site-header__shell {
+  min-height: 62px;
+  background: rgba(8, 8, 8, 0.82);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.site-brand {
+  width: max-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.site-brand__mark {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 auto;
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  border-radius: 50%;
+  font-family: Manrope, sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: -0.08em;
+  transition: background-color 220ms ease, color 220ms ease;
+}
+
+.site-brand:hover .site-brand__mark {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.site-brand__copy {
+  display: grid;
+  gap: 1px;
+  line-height: 1.15;
+}
+
+.site-brand__copy strong {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.site-brand__copy small {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.site-nav {
+  justify-self: center;
+}
+
+.site-nav__links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.site-nav__links a {
+  position: relative;
+  display: block;
+  padding: 9px 14px;
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 12px;
+  font-weight: 500;
+  transition: color 180ms ease, background-color 180ms ease;
+}
+
+.site-nav__links a:hover,
+.site-nav__links a.is-active,
+.site-nav__links a[aria-current="page"] {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.site-header__actions {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.availability {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.availability__dot {
+  position: relative;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px rgba(243, 255, 131, 0.09);
+}
+
+.site-nav__menu-button {
+  display: none;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+}
+
+.site-nav__menu-button span {
+  display: block;
+  width: 18px;
+  height: 1px;
+  margin: 5px auto;
+  background: #fff;
+  transition: transform 260ms var(--ease-out);
+}
+
+.site-nav__menu-button[aria-expanded="true"] span:first-child {
+  transform: translateY(3px) rotate(45deg);
+}
+
+.site-nav__menu-button[aria-expanded="true"] span:last-child {
+  transform: translateY(-3px) rotate(-45deg);
+}
+
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  padding: 112px 20px 20px;
+  background: rgba(8, 8, 8, 0.96);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 300ms ease, visibility 300ms;
+}
+
+.mobile-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.mobile-menu__inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu__topline {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink-muted);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.mobile-menu__navigation {
+  margin-top: 16px;
+}
+
+.mobile-menu__navigation a {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line-soft);
+  font-family: Manrope, sans-serif;
+  font-size: clamp(30px, 9vw, 48px);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.mobile-menu__navigation a span {
+  color: var(--ink-muted);
+  font-family: Inter, sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.button--mobile-menu {
+  margin-top: auto;
+}
+
+/* Buttons */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 20px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  transition:
+    transform 250ms var(--ease-out),
+    background-color 200ms ease,
+    color 200ms ease,
+    border-color 200ms ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+.button--nav {
+  min-height: 42px;
+  padding: 0 16px;
+  background: #fff;
+  color: #111;
+}
+
+.button--nav:hover {
+  background: var(--accent);
+}
+
+.button--primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.button--primary:hover {
+  background: #fff;
+}
+
+.button--secondary,
+.button--mobile-menu {
+  border-color: rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+}
+
+.button--secondary:hover,
+.button--mobile-menu:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.button:disabled,
+.button.is-disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid currentColor;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.text-link span {
+  transition: transform 220ms var(--ease-out);
+}
+
+.text-link:hover span {
+  transform: translate(3px, 3px);
+}
+
+.is-magnetic-enabled {
+  transform: translate(var(--magnetic-x, 0), var(--magnetic-y, 0));
+}
+
+/* Scroll experience */
+.experience,
+.scroll-story,
+.experience__sticky,
+.experience__canvas {
+  background: var(--frame-background);
+}
+
+.experience {
+  position: relative;
+  height: 900vh;
+  isolation: isolate;
+}
+
+.scroll-story {
+  position: relative;
+  height: 100%;
+}
+
+.experience__sticky {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.experience__canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.experience__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.18) 0%, transparent 28%, transparent 74%, rgba(0, 0, 0, 0.2) 100%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.22) 0%, transparent 22%, transparent 72%, rgba(0, 0, 0, 0.24) 100%);
+}
+
+.experience__grain {
+  position: absolute;
+  inset: -50%;
+  z-index: 3;
+  opacity: 0.045;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
+  transform: rotate(4deg);
+}
+
+.experience__overlays {
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-overlay);
+  pointer-events: none;
+}
+
+.story-panel {
+  --panel-x: 6vw;
+  --panel-y: 27vh;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-start;
+  padding: var(--panel-y) 6vw 7vh;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(28px);
+  pointer-events: none;
+  transition:
+    opacity 550ms var(--ease-standard),
+    transform 650ms var(--ease-out),
+    visibility 550ms;
+}
+
+.story-panel.is-active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.story-panel.is-inactive {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-18px);
+}
+
+.story-panel__content {
+  width: min(620px, 42vw);
+  color: #fff;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.2);
+}
+
+.story-panel--strategy,
+.story-panel--instagram {
+  justify-content: flex-end;
+}
+
+.story-panel--strategy .story-panel__content,
+.story-panel--instagram .story-panel__content {
+  width: min(600px, 40vw);
+}
+
+.story-panel--creation {
+  --panel-y: 25vh;
+}
+
+.story-panel--engagement {
+  --panel-y: 24vh;
+}
+
+.story-panel--finale {
+  --panel-y: 23vh;
+  justify-content: flex-start;
+}
+
+.story-panel__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.story-panel__eyebrow span {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  font-size: 9px;
+  letter-spacing: 0;
+}
+
+.story-panel h2 {
+  max-width: 12ch;
+  font-size: clamp(46px, 5.5vw, 92px);
+  font-weight: 600;
+  letter-spacing: -0.065em;
+  line-height: 0.93;
+  text-wrap: balance;
+}
+
+.story-panel--instagram h2 {
+  max-width: 13ch;
+  font-size: clamp(42px, 4.8vw, 78px);
+}
+
+.story-panel__copy {
+  max-width: 48ch;
+  margin-top: 24px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: clamp(14px, 1.15vw, 18px);
+  line-height: 1.55;
+}
+
+.story-panel__actions {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-top: 30px;
+}
+
+.story-panel__service-labels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  margin-top: 28px;
+}
+
+.story-panel__service-labels li {
+  position: relative;
+  padding-left: 18px;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: opacity 350ms ease, transform 450ms var(--ease-out);
+}
+
+.story-panel__service-labels li::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 9px;
+  height: 1px;
+  background: currentColor;
+}
+
+.story-panel__service-labels li.is-visible,
+.story-panel__service-labels li.is-active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.story-panel__process {
+  width: min(440px, 100%);
+  margin-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+.story-panel__process li {
+  display: grid;
+  grid-template-columns: 45px 1fr;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.45);
+  transition: color 220ms ease, padding-left 250ms var(--ease-out);
+}
+
+.story-panel__process li span {
+  font-size: 9px;
+  font-variant-numeric: tabular-nums;
+}
+
+.story-panel__process li strong {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.story-panel__process li.is-active,
+.story-panel__process li.is-complete {
+  padding-left: 10px;
+  color: #fff;
+}
+
+.story-panel__metric-words {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  width: min(560px, 100%);
+  margin-top: 30px;
+}
+
+.story-panel__metric-words span {
+  padding: 12px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(8, 8, 8, 0.26);
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 11px;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(10px);
+  backdrop-filter: blur(8px);
+  transition: opacity 320ms ease, transform 450ms var(--ease-out);
+}
+
+.story-panel__metric-words span.is-visible,
+.story-panel__metric-words span.is-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.experience__progress {
+  position: absolute;
+  right: 28px;
+  top: 50%;
+  z-index: 80;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transform: translateY(-50%);
+}
+
+.experience__progress-track {
+  position: relative;
+  display: block;
+  width: 1px;
+  height: 116px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.24);
+}
+
+.experience__progress-fill {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: var(--scroll-progress, 0%);
+  background: #fff;
+  transition: height 120ms linear;
+}
+
+.experience__progress-value {
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 9px;
+  font-variant-numeric: tabular-nums;
+  writing-mode: vertical-rl;
+}
+
+.experience__stage-status {
+  position: absolute;
+  left: 32px;
+  bottom: 26px;
+  z-index: 80;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 9px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.experience__stage-kicker {
+  color: rgba(255, 255, 255, 0.38);
+}
+
+.experience__stage-name {
+  color: #fff;
+}
+
+.experience__scroll-hint {
+  position: absolute;
+  left: 50%;
+  bottom: 24px;
+  z-index: 80;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.56);
+  font-size: 9px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  transform: translateX(-50%);
+}
+
+.experience__scroll-hint i {
+  display: block;
+  width: 42px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.34);
+}
+
+.reduced-motion-story {
+  display: none;
+  width: var(--container);
+  margin: 0 auto;
+  padding: 140px 0;
+}
+
+.reduced-motion-story > h2 {
+  max-width: 16ch;
+  margin-top: 18px;
+  font-size: clamp(42px, 6vw, 86px);
+  letter-spacing: -0.06em;
+  line-height: 0.98;
+}
+
+.reduced-motion-story__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  margin-top: 80px;
+  background: var(--line);
+}
+
+.reduced-motion-story__grid article {
+  padding: 28px;
+  background: var(--frame-background);
+}
+
+.reduced-motion-story__grid span,
+.reduced-motion-story__grid p {
+  color: var(--ink-muted);
+}
+
+.reduced-motion-story__grid h3 {
+  margin: 24px 0 12px;
+  font-size: 26px;
+}
+
+/* Marquee strip */
+.intro-strip {
+  position: relative;
+  z-index: 3;
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--frame-background);
+}
+
+.intro-strip__inner {
+  min-width: max-content;
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(18px, 3vw, 52px);
+  padding: 0 32px;
+}
+
+.intro-strip p {
+  color: var(--ink-soft);
+  font-family: Manrope, sans-serif;
+  font-size: clamp(12px, 1.2vw, 16px);
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+.intro-strip i {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* General sections */
+.section {
+  position: relative;
+  padding: var(--section-space) 0;
+  border-top: 1px solid var(--line-soft);
+  background: var(--frame-background);
+  content-visibility: auto;
+  contain-intrinsic-size: 900px;
+}
+
+.section--light {
+  background: var(--paper);
+  color: var(--paper-ink);
+}
+
+.section__inner {
+  width: var(--container);
+  margin: 0 auto;
+}
+
+.section-header {
+  display: grid;
+  grid-template-columns: minmax(230px, 0.75fr) minmax(0, 1.25fr);
+  gap: clamp(50px, 8vw, 140px);
+  align-items: start;
+  padding-bottom: clamp(58px, 7vw, 100px);
+  border-bottom: 1px solid var(--line);
+}
+
+.section-header--dark {
+  border-color: var(--line-dark);
+}
+
+.section-header h2 {
+  max-width: 14ch;
+  font-size: clamp(42px, 5.8vw, 86px);
+  font-weight: 600;
+  letter-spacing: -0.06em;
+  line-height: 0.96;
+  text-wrap: balance;
+}
+
+.section-eyebrow {
+  color: var(--ink-muted);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.section--light .section-eyebrow {
+  color: var(--paper-muted);
+}
+
+.section-note {
+  max-width: 34ch;
+  margin-top: 24px;
+  color: var(--ink-muted);
+  font-size: 14px;
+}
+
+.section--light .section-note {
+  color: var(--paper-muted);
+}
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 700ms ease, transform 850ms var(--ease-out);
+}
+
+[data-reveal].is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Services */
+.services__list {
+  margin-top: 24px;
+}
+
+.services__entry {
+  display: grid;
+  grid-template-columns: 74px minmax(240px, 0.9fr) minmax(300px, 1.2fr) 40px;
+  gap: 28px;
+  align-items: center;
+  min-height: 126px;
+  border-bottom: 1px solid var(--line-soft);
+  transition: padding 350ms var(--ease-out), background-color 250ms ease;
+}
+
+.services__entry:hover {
+  padding: 0 18px;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.services__number {
+  color: var(--ink-muted);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+}
+
+.services__entry h3 {
+  font-size: clamp(24px, 2.2vw, 34px);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+}
+
+.services__entry p {
+  max-width: 54ch;
+  color: var(--ink-muted);
+  font-size: 14px;
+}
+
+.services__arrow {
+  justify-self: end;
+  font-size: 20px;
+  transition: transform 250ms var(--ease-out);
+}
+
+.services__entry:hover .services__arrow {
+  transform: translate(4px, -4px);
+}
+
+/* Process */
+.process__timeline {
+  --process-progress: 0;
+  position: relative;
+  margin-top: clamp(65px, 8vw, 120px);
+}
+
+.process__connection-line {
+  position: absolute;
+  top: 28px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--line-dark);
+}
+
+.process__connection-line::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: calc(var(--process-progress) * 100%);
+  background: var(--paper-ink);
+}
+
+.process__list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 36px;
+}
+
+.process__stage {
+  position: relative;
+  padding-top: 60px;
+}
+
+.process__stage::before {
+  content: "";
+  position: absolute;
+  top: 23px;
+  left: 0;
+  width: 11px;
+  height: 11px;
+  border: 2px solid var(--paper);
+  border-radius: 50%;
+  background: rgba(21, 21, 21, 0.28);
+  box-shadow: 0 0 0 1px rgba(21, 21, 21, 0.25);
+  transition: background-color 220ms ease, transform 250ms var(--ease-out);
+}
+
+.process__stage.is-active::before {
+  background: var(--paper-ink);
+  transform: scale(1.15);
+}
+
+.process__number {
+  color: var(--paper-muted);
+  font-size: 10px;
+  font-variant-numeric: tabular-nums;
+}
+
+.process__stage h3 {
+  margin-top: 22px;
+  font-size: clamp(27px, 2.7vw, 42px);
+  font-weight: 600;
+  letter-spacing: -0.045em;
+}
+
+.process__stage div p {
+  max-width: 30ch;
+  margin-top: 18px;
+  color: var(--paper-muted);
+  font-size: 14px;
+}
+
+/* Work */
+.work__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 80px 24px;
+  margin-top: 80px;
+}
+
+.case-study--feature {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(340px, 0.55fr);
+  gap: 44px;
+}
+
+.case-study__media {
+  position: relative;
+  min-height: 420px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 24px;
+  overflow: hidden;
+  border: 1px solid var(--line-soft);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.09), transparent 45%),
+    radial-gradient(circle at 72% 22%, rgba(243, 255, 131, 0.12), transparent 25%),
+    #111;
+}
+
+.case-study:not(.case-study--feature) .case-study__media {
+  min-height: 330px;
+}
+
+.case-study__media::before,
+.case-study__media::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.case-study__media::before {
+  inset: 12%;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.case-study__media::after {
+  top: 50%;
+  left: 50%;
+  width: 120px;
+  height: 120px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.case-study__media span,
+.case-study__media p {
+  position: relative;
+  z-index: 2;
+  color: var(--ink-muted);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.case-study__content {
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.case-study--feature .case-study__content {
+  align-self: end;
+}
+
+.case-study__industry {
+  color: var(--ink-muted);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.case-study__content h3 {
+  max-width: 18ch;
+  margin-top: 18px;
+  font-size: clamp(27px, 3vw, 46px);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 1.06;
+}
+
+.case-study__content dl {
+  margin: 34px 0;
+}
+
+.case-study__content dl div {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 18px;
+  padding: 14px 0;
+  border-top: 1px solid var(--line-soft);
+}
+
+.case-study__content dt {
+  color: var(--ink-muted);
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.case-study__content dd {
+  color: var(--ink-soft);
+  font-size: 13px;
+}
+
+.case-study:not(.case-study--feature) .case-study__content .text-link {
+  margin-top: 28px;
+}
+
+/* About */
+.about__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(420px, 0.75fr);
+  gap: clamp(60px, 10vw, 170px);
+  align-items: start;
+}
+
+.about__copy h2 {
+  max-width: 11ch;
+  margin-top: 28px;
+  font-size: clamp(48px, 6.5vw, 96px);
+  font-weight: 600;
+  letter-spacing: -0.065em;
+  line-height: 0.94;
+}
+
+.about__copy > p:not(.section-eyebrow) {
+  max-width: 54ch;
+  margin-top: 38px;
+  color: var(--ink-muted);
+  font-size: 16px;
+}
+
+.about__copy blockquote {
+  max-width: 24ch;
+  margin-top: 70px;
+  padding-left: 24px;
+  border-left: 1px solid var(--accent);
+  font-family: Manrope, sans-serif;
+  font-size: clamp(22px, 2.3vw, 34px);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.25;
+}
+
+.about__portrait-placeholder {
+  aspect-ratio: 4 / 5;
+  display: grid;
+  place-items: center;
+  padding: 30px;
+  border: 1px solid var(--line-soft);
+  background:
+    linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.06)),
+    #111;
+  color: var(--ink-muted);
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.about__portrait figcaption {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 16px;
+  color: var(--ink-muted);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Contact */
+.contact {
+  padding-bottom: clamp(100px, 10vw, 160px);
+}
+
+.contact__layout {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.72fr) minmax(560px, 1.28fr);
+  gap: clamp(60px, 9vw, 150px);
+}
+
+.contact__intro h2 {
+  max-width: 10ch;
+  margin-top: 28px;
+  font-size: clamp(50px, 6.2vw, 92px);
+  font-weight: 600;
+  letter-spacing: -0.065em;
+  line-height: 0.94;
+}
+
+.contact__intro > p:not(.section-eyebrow) {
+  max-width: 40ch;
+  margin-top: 28px;
+  color: var(--ink-muted);
+}
+
+.contact__meta {
+  margin-top: 70px;
+  border-top: 1px solid var(--line);
+}
+
+.contact__meta div {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.contact__meta span {
+  color: var(--ink-muted);
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.contact__meta strong {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.contact-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px 24px;
+  padding: clamp(28px, 4vw, 54px);
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.contact-form__instructions,
+.form-field--full,
+.contact-form__footer {
+  grid-column: 1 / -1;
+}
+
+.contact-form__instructions {
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--line-soft);
+  color: var(--ink-muted);
+  font-size: 12px;
+}
+
+.form-field {
+  position: relative;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--ink-soft);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.form-field label span {
+  color: var(--ink-muted);
+  font-weight: 400;
+  text-transform: none;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  padding: 12px 0 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+  background: transparent;
+  color: #fff;
+  outline: none;
+  transition: border-color 180ms ease;
+}
+
+.form-field textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-field select {
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-position: calc(100% - 11px) 50%, calc(100% - 6px) 50%;
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+}
+
+.form-field select option {
+  background: #111;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: var(--accent);
+}
+
+.form-field input.has-error,
+.form-field select.has-error,
+.form-field textarea.has-error,
+.form-field input[aria-invalid="true"],
+.form-field select[aria-invalid="true"],
+.form-field textarea[aria-invalid="true"] {
+  border-color: var(--danger);
+}
+
+.form-field__error,
+.field-error {
+  min-height: 18px;
+  margin-top: 7px;
+  color: var(--danger);
+  font-size: 11px;
+}
+
+.contact-form__footer {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding-top: 12px;
+}
+
+.contact-form__status {
+  color: var(--ink-muted);
+  font-size: 12px;
+}
+
+.contact-form__status.is-error {
+  color: var(--danger);
+}
+
+.contact-form__status.is-success {
+  color: var(--success);
+}
+
+/* Footer */
+.site-footer {
+  padding: 80px 0 24px;
+  border-top: 1px solid var(--line);
+  background: var(--frame-background);
+}
+
+.site-footer__inner {
+  width: var(--container);
+  margin: 0 auto;
+}
+
+.site-footer__top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+  padding-bottom: 70px;
+}
+
+.site-footer__brand {
+  font-family: Manrope, sans-serif;
+  font-size: clamp(36px, 6vw, 88px);
+  font-weight: 700;
+  letter-spacing: -0.07em;
+  line-height: 0.9;
+}
+
+.site-footer__top p {
+  max-width: 38ch;
+  color: var(--ink-muted);
+  font-size: 13px;
+}
+
+.site-footer__links {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 22px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.site-footer__links nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 30px;
+}
+
+.site-footer__links a {
+  color: var(--ink-soft);
+  font-size: 12px;
+}
+
+.site-footer__links a:hover {
+  color: #fff;
+}
+
+.site-footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 22px;
+  color: var(--ink-muted);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Responsive */
+@media (max-width: 1180px) {
+  :root {
+    --container: min(100% - 48px, 1180px);
+  }
+
+  .site-header__shell {
+    grid-template-columns: 1fr auto;
+  }
+
+  .site-nav,
+  .availability {
+    display: none;
+  }
+
+  .site-header__actions {
+    grid-column: 2;
+    grid-row: 1;
+    margin-right: 58px;
+  }
+
+  .site-nav__menu-button {
+    display: block;
+    position: absolute;
+    right: 12px;
+  }
+
+  .story-panel__content {
+    width: min(560px, 48vw);
+  }
+
+  .services__entry {
+    grid-template-columns: 55px minmax(220px, 0.85fr) minmax(280px, 1.15fr) 32px;
+  }
+
+  .contact__layout {
+    grid-template-columns: minmax(260px, 0.65fr) minmax(520px, 1.35fr);
+    gap: 60px;
+  }
+}
+
+@media (max-width: 900px) {
+  :root {
+    --container: calc(100% - 40px);
+    --section-space: 100px;
+  }
+
+  .site-header {
+    padding: 12px 14px 0;
+  }
+
+  .site-header__shell {
+    min-height: 64px;
+    padding-left: 12px;
+    border-radius: 15px;
+  }
+
+  .site-header__actions .button--nav {
+    display: none;
+  }
+
+  .site-header__actions {
+    margin-right: 48px;
+  }
+
+  .story-panel {
+    --panel-y: 21vh;
+    padding-right: 5vw;
+    padding-left: 5vw;
+  }
+
+  .story-panel__content,
+  .story-panel--strategy .story-panel__content,
+  .story-panel--instagram .story-panel__content {
+    width: min(530px, 58vw);
+  }
+
+  .story-panel h2,
+  .story-panel--instagram h2 {
+    font-size: clamp(42px, 7.5vw, 70px);
+  }
+
+  .section-header,
+  .about__layout,
+  .contact__layout {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .section-header h2 {
+    max-width: 15ch;
+  }
+
+  .services__entry {
+    grid-template-columns: 48px 1fr 32px;
+    gap: 18px;
+    padding: 24px 0;
+  }
+
+  .services__entry p {
+    grid-column: 2 / 4;
+  }
+
+  .process__connection-line {
+    top: 0;
+    bottom: 0;
+    left: 5px;
+    width: 1px;
+    height: auto;
+  }
+
+  .process__connection-line::after {
+    width: 100%;
+    height: calc(var(--process-progress) * 100%);
+  }
+
+  .process__list {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .process__stage {
+    padding: 0 0 60px 42px;
+  }
+
+  .process__stage::before {
+    top: 4px;
+    left: 0;
+  }
+
+  .process__stage h3 {
+    margin-top: 10px;
+  }
+
+  .case-study--feature {
+    grid-template-columns: 1fr;
+  }
+
+  .about__layout {
+    grid-template-columns: 1fr 0.75fr;
+    gap: 40px;
+  }
+
+  .contact-form {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 680px) {
+  :root {
+    --container: calc(100% - 28px);
+    --section-space: 82px;
+  }
+
+  .site-header {
+    padding: 10px 10px 0;
+  }
+
+  .site-header__shell {
+    min-height: 60px;
+    padding: 8px 9px 8px 11px;
+  }
+
+  .site-brand__mark {
+    width: 38px;
+    height: 38px;
+  }
+
+  .site-brand__copy small {
+    display: none;
+  }
+
+  .site-brand__copy strong {
+    font-size: 10px;
+  }
+
+  .site-nav__menu-button {
+    width: 42px;
+    height: 42px;
+    right: 9px;
+  }
+
+  .mobile-menu {
+    padding: 92px 14px 14px;
+  }
+
+  .experience__scrim {
+    background:
+      linear-gradient(180deg, rgba(0, 0, 0, 0.24) 0%, transparent 23%, transparent 58%, rgba(0, 0, 0, 0.5) 100%);
+  }
+
+  .story-panel,
+  .story-panel--strategy,
+  .story-panel--instagram,
+  .story-panel--finale {
+    --panel-y: auto;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding: 0 18px 88px;
+  }
+
+  .story-panel__content,
+  .story-panel--strategy .story-panel__content,
+  .story-panel--instagram .story-panel__content {
+    width: 100%;
+  }
+
+  .story-panel h2,
+  .story-panel--instagram h2 {
+    max-width: 13ch;
+    font-size: clamp(38px, 12vw, 58px);
+    line-height: 0.96;
+  }
+
+  .story-panel__copy {
+    max-width: 36ch;
+    margin-top: 16px;
+    font-size: 13px;
+  }
+
+  .story-panel__actions {
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 22px;
+  }
+
+  .story-panel__service-labels {
+    gap: 8px 13px;
+    margin-top: 20px;
+  }
+
+  .story-panel__service-labels li {
+    font-size: 8px;
+  }
+
+  .story-panel__process {
+    margin-top: 20px;
+  }
+
+  .story-panel__metric-words {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    margin-top: 20px;
+  }
+
+  .story-panel__metric-words span {
+    padding: 9px;
+    font-size: 9px;
+  }
+
+  .experience__stage-status {
+    left: 17px;
+    bottom: 18px;
+    gap: 8px;
+  }
+
+  .experience__scroll-hint {
+    display: none;
+  }
+
+  .experience__progress {
+    right: 12px;
+  }
+
+  .experience__progress-track {
+    height: 86px;
+  }
+
+  .intro-strip__inner {
+    justify-content: flex-start;
+    min-height: 62px;
+    overflow: hidden;
+  }
+
+  .section-header {
+    padding-bottom: 46px;
+  }
+
+  .section-header h2 {
+    font-size: clamp(38px, 12vw, 58px);
+  }
+
+  .services__entry {
+    grid-template-columns: 36px 1fr 26px;
+    min-height: auto;
+  }
+
+  .services__entry h3 {
+    font-size: 23px;
+  }
+
+  .services__entry p {
+    font-size: 13px;
+  }
+
+  .work__grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+    margin-top: 55px;
+  }
+
+  .case-study--feature {
+    grid-column: auto;
+  }
+
+  .case-study__media,
+  .case-study:not(.case-study--feature) .case-study__media {
+    min-height: 300px;
+  }
+
+  .case-study__content h3 {
+    font-size: 30px;
+  }
+
+  .about__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .about__copy h2,
+  .contact__intro h2 {
+    font-size: clamp(44px, 13vw, 66px);
+  }
+
+  .about__copy blockquote {
+    margin-top: 50px;
+  }
+
+  .about__portrait {
+    width: 82%;
+    margin-left: auto;
+  }
+
+  .contact-form {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 24px 18px;
+  }
+
+  .contact-form__instructions,
+  .form-field--full,
+  .contact-form__footer {
+    grid-column: auto;
+  }
+
+  .contact-form__footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .site-footer__top,
+  .site-footer__links,
+  .site-footer__bottom {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .site-footer__top {
+    padding-bottom: 45px;
+  }
+
+  .site-footer__links {
+    gap: 32px;
+  }
+
+  .site-footer__links nav {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+  }
+}
+
+@media (max-width: 390px) {
+  .story-panel h2,
+  .story-panel--instagram h2 {
+    font-size: 36px;
+  }
+
+  .story-panel__eyebrow {
+    gap: 8px;
+    font-size: 8px;
+  }
+
+  .story-panel__eyebrow span {
+    width: 24px;
+    height: 24px;
+  }
+
+  .button {
+    min-height: 44px;
+    padding: 0 15px;
+  }
+
+  .experience__stage-status {
+    font-size: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .experience {
+    height: auto !important;
+  }
+
+  .scroll-story {
+    display: none;
+  }
+
+  .reduced-motion-story {
+    display: block;
+  }
+
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+  </style>
+  <script src="script.js?v=4" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div
+    class="site-loader"
+    id="siteLoader"
+    data-loader
+    role="status"
+    aria-live="polite"
+    aria-label="Loading the B.B Universe experience"
+  >
+    <div class="site-loader__inner">
+      <div class="site-loader__mark" aria-hidden="true">BB</div>
+      <p class="site-loader__brand">B.B UNIVERSE</p>
+      <p class="site-loader__label">Loading the experience</p>
+
+      <div
+        class="site-loader__progress"
+        role="progressbar"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        aria-valuenow="0"
+      >
+        <span class="site-loader__progress-fill" data-loader-progress-fill></span>
+      </div>
+
+      <p
+        class="site-loader__percentage"
+        id="loaderPercentage"
+        data-loader-percentage
+      >0%</p>
+    </div>
+  </div>
+
+  <header class="site-header" id="siteHeader" data-site-header>
+    <div class="site-header__shell">
+      <a class="site-brand" href="#experience" aria-label="B.B Universe home">
+        <span class="site-brand__mark" aria-hidden="true">BB</span>
+        <span class="site-brand__copy">
+          <strong>B.B UNIVERSE</strong>
+          <small>Social Media Studio</small>
+        </span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary navigation">
+        <ul class="site-nav__links" role="list">
+          <li><a href="#services" data-nav-link>Services</a></li>
+          <li><a href="#process" data-nav-link>Process</a></li>
+          <li><a href="#work" data-nav-link>Work</a></li>
+          <li><a href="#about" data-nav-link>About</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-header__actions">
+        <span class="availability" aria-label="Currently accepting selected projects">
+          <span class="availability__dot" aria-hidden="true"></span>
+          Now booking
+        </span>
+        <a class="button button--nav" href="#contact" data-nav-link data-magnetic>
+          Start a project
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+
+      <button
+        class="site-nav__menu-button"
+        id="mobileMenuButton"
+        type="button"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+        aria-label="Open navigation menu"
+        data-menu-toggle
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <div
+      class="mobile-menu"
+      id="mobileMenu"
+      data-mobile-menu
+      aria-hidden="true"
+      hidden
+    >
+      <div class="mobile-menu__inner">
+        <div class="mobile-menu__topline">
+          <span>Navigation</span>
+          <span>New Delhi · India</span>
+        </div>
+
+        <nav class="mobile-menu__navigation" aria-label="Mobile navigation">
+          <ul role="list">
+            <li><a href="#services" data-nav-link data-menu-close-link><span>01</span> Services</a></li>
+            <li><a href="#process" data-nav-link data-menu-close-link><span>02</span> Process</a></li>
+            <li><a href="#work" data-nav-link data-menu-close-link><span>03</span> Work</a></li>
+            <li><a href="#about" data-nav-link data-menu-close-link><span>04</span> About</a></li>
+            <li><a href="#contact" data-nav-link data-menu-close-link><span>05</span> Contact</a></li>
+          </ul>
+        </nav>
+
+        <a class="button button--mobile-menu" href="#contact" data-menu-close-link>
+          Let’s build something memorable
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section
+      class="experience"
+      id="experience"
+      aria-labelledby="experience-title"
+      aria-describedby="experience-description"
+      data-experience
+      data-frame-directory="frames"
+      data-frame-prefix="ezgif-frame-"
+      data-frame-extension="jpg"
+      data-frame-count="240"
+    >
+      <h1 class="sr-only" id="experience-title">B.B Universe cinematic social media experience</h1>
+      <p class="sr-only" id="experience-description">
+        A camera transforms into a smartphone as the page explains the B.B Universe strategy,
+        production and growth process.
+      </p>
+
+      <div class="scroll-story" data-scroll-story>
+        <div class="experience__sticky" data-sticky-visual>
+          <canvas
+            class="experience__canvas"
+            id="sequenceCanvas"
+            data-sequence-canvas
+            aria-hidden="true"
+          ></canvas>
+
+          <div class="experience__scrim" aria-hidden="true"></div>
+          <div class="experience__grain" aria-hidden="true"></div>
+
+          <div
+            class="experience__progress"
+            id="experienceProgress"
+            data-scroll-progress
+            role="progressbar"
+            aria-label="Experience scroll progress"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow="0"
+          >
+            <span class="experience__progress-track" aria-hidden="true">
+              <span class="experience__progress-fill" data-scroll-progress-fill></span>
+            </span>
+            <span class="experience__progress-value" data-scroll-progress-value>0%</span>
+          </div>
+
+          <div class="experience__stage-status" aria-live="polite" aria-atomic="true">
+            <span class="experience__stage-kicker">Chapter</span>
+            <span class="experience__stage-index">01 / 06</span>
+            <span class="experience__stage-name" data-current-stage-name>Idea</span>
+          </div>
+
+          <div class="experience__scroll-hint" aria-hidden="true">
+            <span>Scroll to explore</span>
+            <i></i>
+          </div>
+
+          <div class="experience__overlays" data-stage-container>
+            <article
+              class="story-panel story-panel--idea is-active"
+              data-stage="idea"
+              data-stage-index="0"
+              aria-hidden="false"
+            >
+              <div class="story-panel__content">
+                <p class="story-panel__eyebrow"><span>01</span> Social media, built differently</p>
+                <h2>Your brand deserves more than just posts.</h2>
+                <p class="story-panel__copy">
+                  We turn raw ideas into content people stop for, remember and act on.
+                </p>
+                <div class="story-panel__actions">
+                  <a class="button button--primary" href="#contact" data-magnetic>Start your growth</a>
+                  <a class="text-link" href="#services">See what we do <span aria-hidden="true">↘</span></a>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="story-panel story-panel--strategy"
+              data-stage="strategy"
+              data-stage-index="1"
+              aria-hidden="true"
+            >
+              <div class="story-panel__content">
+                <p class="story-panel__eyebrow"><span>02</span> Strategy before noise</p>
+                <h2>Every result starts with a strategy.</h2>
+                <p class="story-panel__copy">
+                  Planning, scripting, production, publishing and optimisation—built as one system.
+                </p>
+                <ul class="story-panel__service-labels" role="list" aria-label="Strategy services">
+                  <li data-reveal-service="strategy">Strategy</li>
+                  <li data-reveal-service="direction">Direction</li>
+                  <li data-reveal-service="production">Production</li>
+                  <li data-reveal-service="editing">Editing</li>
+                  <li data-reveal-service="publishing">Publishing</li>
+                </ul>
+              </div>
+            </article>
+
+            <article
+              class="story-panel story-panel--creation"
+              data-stage="creation"
+              data-stage-index="2"
+              aria-hidden="true"
+            >
+              <div class="story-panel__content">
+                <p class="story-panel__eyebrow"><span>03</span> Built for attention</p>
+                <h2>Created to earn the pause.</h2>
+                <p class="story-panel__copy">
+                  Strong hooks, visual direction and edits designed for how people consume content now.
+                </p>
+                <ol class="story-panel__process" aria-label="Content growth process">
+                  <li data-process-step="plan"><span>01</span><strong>Plan</strong></li>
+                  <li data-process-step="create"><span>02</span><strong>Create</strong></li>
+                  <li data-process-step="publish"><span>03</span><strong>Publish</strong></li>
+                  <li data-process-step="grow"><span>04</span><strong>Grow</strong></li>
+                </ol>
+              </div>
+            </article>
+
+            <article
+              class="story-panel story-panel--instagram"
+              data-stage="instagram"
+              data-stage-index="3"
+              aria-hidden="true"
+            >
+              <div class="story-panel__content">
+                <p class="story-panel__eyebrow"><span>04</span> Native to the platform</p>
+                <h2>Content that belongs in the feed—without blending into it.</h2>
+                <p class="story-panel__copy">
+                  A consistent social presence that turns casual viewers into an active audience.
+                </p>
+              </div>
+            </article>
+
+            <article
+              class="story-panel story-panel--engagement"
+              data-stage="engagement"
+              data-stage-index="4"
+              aria-hidden="true"
+            >
+              <div class="story-panel__content">
+                <p class="story-panel__eyebrow"><span>05</span> Attention, converted</p>
+                <h2>Visibility is only the beginning.</h2>
+                <p class="story-panel__copy">
+                  We turn attention into conversations, community and meaningful business opportunities.
+                </p>
+                <div class="story-panel__metric-words" aria-label="Growth outcomes">
+                  <span data-metric-word="reach">More reach</span>
+                  <span data-metric-word="engagement">More engagement</span>
+                  <span data-metric-word="conversations">More conversations</span>
+                  <span data-metric-word="opportunities">More opportunities</span>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="story-panel story-panel--finale"
+              data-stage="finale"
+              data-stage-index="5"
+              aria-hidden="true"
+            >
+              <div class="story-panel__content">
+                <p class="story-panel__eyebrow"><span>06</span> Welcome to B.B Universe</p>
+                <h2>Let’s make your brand impossible to ignore.</h2>
+                <p class="story-panel__copy">
+                  Strategy, content and management working together to build a brand people want to follow.
+                </p>
+                <div class="story-panel__actions">
+                  <a class="button button--primary" href="#contact" data-magnetic>Work with B.B Universe</a>
+                  <a class="text-link" href="#work">View selected work <span aria-hidden="true">↘</span></a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <div class="reduced-motion-story" data-reduced-motion-story>
+        <p class="section-eyebrow">B.B UNIVERSE</p>
+        <h2>Strategy, content and management built to move brands forward.</h2>
+        <div class="reduced-motion-story__grid">
+          <article><span>01</span><h3>Idea</h3><p>Turn brand goals into a clear social direction.</p></article>
+          <article><span>02</span><h3>Strategy</h3><p>Build a purpose-led content and publishing system.</p></article>
+          <article><span>03</span><h3>Create</h3><p>Produce scroll-stopping reels, visuals and stories.</p></article>
+          <article><span>04</span><h3>Publish</h3><p>Show up consistently with platform-native content.</p></article>
+          <article><span>05</span><h3>Engage</h3><p>Turn passive attention into active conversations.</p></article>
+          <article><span>06</span><h3>Grow</h3><p>Review performance and improve what works.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro-strip" aria-label="B.B Universe positioning">
+      <div class="intro-strip__inner">
+        <p>Social strategy</p><i></i><p>Content direction</p><i></i><p>Reels & production</p><i></i><p>Account management</p>
+      </div>
+    </section>
+
+    <section class="services section" id="services" aria-labelledby="services-title">
+      <div class="section__inner">
+        <header class="section-header" data-reveal>
+          <div>
+            <p class="section-eyebrow">01 — Services</p>
+            <p class="section-note">Everything your social presence needs, handled as one connected system.</p>
+          </div>
+          <h2 id="services-title">From the first idea to the final upload.</h2>
+        </header>
+
+        <ol class="services__list">
+          <li class="services__entry" data-reveal>
+            <span class="services__number">01</span>
+            <h3>Social media strategy</h3>
+            <p>Positioning, audience direction, campaign planning and a practical content roadmap.</p>
+            <span class="services__arrow" aria-hidden="true">↗</span>
+          </li>
+          <li class="services__entry" data-reveal>
+            <span class="services__number">02</span>
+            <h3>Content creation</h3>
+            <p>Concepts, scripts, visual direction and production designed around your brand.</p>
+            <span class="services__arrow" aria-hidden="true">↗</span>
+          </li>
+          <li class="services__entry" data-reveal>
+            <span class="services__number">03</span>
+            <h3>Reels & video editing</h3>
+            <p>Hooks, pacing, captions, sound and clean edits made to hold attention.</p>
+            <span class="services__arrow" aria-hidden="true">↗</span>
+          </li>
+          <li class="services__entry" data-reveal>
+            <span class="services__number">04</span>
+            <h3>Account management</h3>
+            <p>Scheduling, publishing, profile optimisation and consistent brand presentation.</p>
+            <span class="services__arrow" aria-hidden="true">↗</span>
+          </li>
+          <li class="services__entry" data-reveal>
+            <span class="services__number">05</span>
+            <h3>Community management</h3>
+            <p>Thoughtful engagement that helps followers become a genuine brand community.</p>
+            <span class="services__arrow" aria-hidden="true">↗</span>
+          </li>
+          <li class="services__entry" data-reveal>
+            <span class="services__number">06</span>
+            <h3>Performance analysis</h3>
+            <p>Clear reviews, useful reporting and continual optimisation based on real results.</p>
+            <span class="services__arrow" aria-hidden="true">↗</span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="process section section--light" id="process" aria-labelledby="process-title">
+      <div class="section__inner">
+        <header class="section-header section-header--dark" data-reveal>
+          <div>
+            <p class="section-eyebrow">02 — Process</p>
+            <p class="section-note">A clear system that keeps creativity connected to business goals.</p>
+          </div>
+          <h2 id="process-title">One process. No disconnected posting.</h2>
+        </header>
+
+        <div class="process__timeline" data-process-timeline>
+          <div class="process__connection-line" aria-hidden="true"></div>
+          <ol class="process__list">
+            <li class="process__stage" data-process-timeline-stage="discover" data-reveal>
+              <p class="process__number">01</p>
+              <div><h3>Discover</h3><p>We learn the brand, audience, voice, offer and real business objective.</p></div>
+            </li>
+            <li class="process__stage" data-process-timeline-stage="build" data-reveal>
+              <p class="process__number">02</p>
+              <div><h3>Build</h3><p>We define the strategy, content pillars, visual language and publishing rhythm.</p></div>
+            </li>
+            <li class="process__stage" data-process-timeline-stage="create" data-reveal>
+              <p class="process__number">03</p>
+              <div><h3>Create</h3><p>Ideas become scripts, shoots, edits, captions and platform-ready assets.</p></div>
+            </li>
+            <li class="process__stage" data-process-timeline-stage="grow" data-reveal>
+              <p class="process__number">04</p>
+              <div><h3>Grow</h3><p>Performance is reviewed, refined and improved without losing the brand.</p></div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="work section" id="work" aria-labelledby="work-title">
+      <div class="section__inner">
+        <header class="section-header" data-reveal>
+          <div>
+            <p class="section-eyebrow">03 — Selected work</p>
+            <p class="section-note">Use these layouts for real campaigns, reels and verified outcomes.</p>
+          </div>
+          <h2 id="work-title">Work that moves people—and numbers.</h2>
+        </header>
+
+        <div class="work__grid">
+          <article class="case-study case-study--feature" data-reveal>
+            <div class="case-study__media">
+              <span>01</span>
+              <p>Featured campaign visual</p>
+            </div>
+            <div class="case-study__content">
+              <p class="case-study__industry">Brand / Industry</p>
+              <h3>Replace with your strongest social media campaign.</h3>
+              <dl>
+                <div><dt>Objective</dt><dd>What the client needed to achieve.</dd></div>
+                <div><dt>Approach</dt><dd>The strategy, content and execution.</dd></div>
+                <div><dt>Result</dt><dd>Add a verified result or meaningful outcome.</dd></div>
+              </dl>
+              <a class="text-link" href="#contact">Add project link <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+
+          <article class="case-study" data-reveal>
+            <div class="case-study__media"><span>02</span><p>Reel / campaign thumbnail</p></div>
+            <div class="case-study__content">
+              <p class="case-study__industry">Brand / Industry</p>
+              <h3>Replace with a reel series or account transformation.</h3>
+              <a class="text-link" href="#contact">Add project link <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+
+          <article class="case-study" data-reveal>
+            <div class="case-study__media"><span>03</span><p>Reel / campaign thumbnail</p></div>
+            <div class="case-study__content">
+              <p class="case-study__industry">Brand / Industry</p>
+              <h3>Replace with a launch, campaign or content system.</h3>
+              <a class="text-link" href="#contact">Add project link <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about section" id="about" aria-labelledby="about-title">
+      <div class="section__inner about__layout">
+        <div class="about__copy" data-reveal>
+          <p class="section-eyebrow">04 — About B.B Universe</p>
+          <h2 id="about-title">Built for brands with something worth saying.</h2>
+          <p>
+            B.B Universe combines strategy, creativity and hands-on social media management to help
+            brands show up with clarity and consistency.
+          </p>
+          <blockquote>
+            Not content for the sake of posting. Content created to move the brand forward.
+          </blockquote>
+        </div>
+
+        <figure class="about__portrait" data-reveal>
+          <div class="about__portrait-placeholder">
+            <span>Replace with founder or team portrait</span>
+          </div>
+          <figcaption>
+            <span>B.B Universe</span>
+            <span>Strategy · Direction · Management</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="contact section" id="contact" aria-labelledby="contact-title">
+      <div class="section__inner contact__layout">
+        <div class="contact__intro" data-reveal>
+          <p class="section-eyebrow">05 — Start a project</p>
+          <h2 id="contact-title">Your next post can do more.</h2>
+          <p>Tell us where your brand is today—and where you want it to go.</p>
+          <div class="contact__meta">
+            <div><span>For</span><strong>Strategy, content & management</strong></div>
+            <div><span>Based in</span><strong>New Delhi, India</strong></div>
+            <div><span>Response</span><strong>Usually within 24 hours</strong></div>
+          </div>
+        </div>
+
+        <form
+          class="contact-form"
+          id="contact-form"
+          data-contact-form
+          novalidate
+          aria-describedby="formInstructions"
+        >
+          <p class="contact-form__instructions" id="formInstructions">
+            Tell us a little about the project. Required fields are marked *.
+          </p>
+
+          <div class="form-field">
+            <label for="contactName">Name *</label>
+            <input id="contactName" name="name" type="text" autocomplete="name" required>
+            <p class="form-field__error" data-error-for="name" aria-live="polite"></p>
+          </div>
+
+          <div class="form-field">
+            <label for="contactBrand">Brand / company *</label>
+            <input id="contactBrand" name="brand" type="text" autocomplete="organization" required>
+            <p class="form-field__error" data-error-for="brand" aria-live="polite"></p>
+          </div>
+
+          <div class="form-field">
+            <label for="contactEmail">Email *</label>
+            <input id="contactEmail" name="email" type="email" autocomplete="email" required>
+            <p class="form-field__error" data-error-for="email" aria-live="polite"></p>
+          </div>
+
+          <div class="form-field">
+            <label for="contactPhone">Phone <span>(optional)</span></label>
+            <input id="contactPhone" name="phone" type="tel" autocomplete="tel">
+            <p class="form-field__error" data-error-for="phone" aria-live="polite"></p>
+          </div>
+
+          <div class="form-field">
+            <label for="contactInstagram">Instagram handle *</label>
+            <input id="contactInstagram" name="instagram" type="text" placeholder="@yourbrand" required>
+            <p class="form-field__error" data-error-for="instagram" aria-live="polite"></p>
+          </div>
+
+          <div class="form-field">
+            <label for="contactService">What do you need? *</label>
+            <select id="contactService" name="service" required>
+              <option value="" selected disabled>Select a service</option>
+              <option value="strategy">Social media strategy</option>
+              <option value="content">Content creation</option>
+              <option value="reels">Reels & video editing</option>
+              <option value="management">Account management</option>
+              <option value="full-management">Full social media management</option>
+              <option value="not-sure">Not sure yet</option>
+            </select>
+            <p class="form-field__error" data-error-for="service" aria-live="polite"></p>
+          </div>
+
+          <div class="form-field form-field--full">
+            <label for="contactMessage">Tell us about the project *</label>
+            <textarea id="contactMessage" name="message" rows="5" required></textarea>
+            <p class="form-field__error" data-error-for="message" aria-live="polite"></p>
+          </div>
+
+          <div class="contact-form__footer">
+            <button class="button button--primary" type="submit" data-form-submit data-magnetic>
+              Send enquiry <span aria-hidden="true">↗</span>
+            </button>
+            <p
+              class="contact-form__status"
+              id="contactFormStatus"
+              data-form-status
+              role="status"
+              aria-live="polite"
+            ></p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__top">
+        <a class="site-footer__brand" href="#experience">B.B UNIVERSE</a>
+        <p>Social media strategy, content and management for brands ready to become memorable.</p>
+      </div>
+
+      <div class="site-footer__links">
+        <nav aria-label="Footer navigation">
+          <a href="#services">Services</a>
+          <a href="#process">Process</a>
+          <a href="#work">Work</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <a class="site-footer__back-to-top" href="#experience">Back to top ↑</a>
+      </div>
+
+      <div class="site-footer__bottom">
+        <p>© <span data-current-year>2026</span> B.B Universe</p>
+        <p>New Delhi · India</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
